@@ -1,11 +1,10 @@
-const container = document.querySelector("div[data-business-id='David']")
-container.style.display='flex'
-container.style.width ='300px'
-container.style.height='200px'
-const link = document.querySelector("div[data-business-id='David'] > a")
+const container = document.querySelector("div[data-bcf-business-id]")
+// container.style.width ='400px'
+// container.style.height='300px'
+const companyName= container.getAttribute('data-bcf-business-id')
+const link = document.querySelector("div[data-bcf-business-id] > a")
 const img = document.createElement('img')
-img.setAttribute('src', 'https://images.unsplash.com/photo-1495653797063-114787b77b23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')
-img.style.width='300px'
-img.style.height='200px'
-img.style.objectFit='contain'
+img.setAttribute('src', `https://res.cloudinary.com/barncancerfonden/image/upload/BCF-widget/${companyName.toLowerCase()}/barncancerfonden.jpg`)
+img.style.width='100%'
+img.style.height='100%'
 link.appendChild(img)
